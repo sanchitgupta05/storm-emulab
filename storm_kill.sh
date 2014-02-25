@@ -2,9 +2,12 @@
 #
 # Kill all live storm processes.
 
-for i in `seq 1 2`;
+NUM_HOSTS=3
+
+for i in `seq 1 $NUM_HOSTS`;
 do
-    ssh hosts-$i "pkill -f backtype.storm"
+    echo "Stopping supervisor ${i}..."
+    ssh hosts-$i "sudo service supervisor stop"
 done
 
 exit 0

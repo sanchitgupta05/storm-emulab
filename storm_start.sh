@@ -2,20 +2,16 @@
 #
 # Start storm processes.
 
+NUM_HOSTS=3
+
 echo "Starting zookeeper..."
 cd /proj/uiucnet/exp/storm/deps/zookeeper-3.4.5/
-./bin/zkServer.sh start
+sudo ./bin/zkServer.sh start
 
-echo "Starting nimbus..."
-storm nimbus &
-
-echo "Starting UI..."
-storm ui &
-
-for i in `seq 1 2`;
+for i in `seq 1 $NUM_HOSTS`;
 do
     echo "Starting supervisor ${i}..."
-    ssh hosts-$i "/proj/uiucnet/exp/storm/storm/bin/storm supervisor &" &
+    ssh hosts-$i "sudo service supervisor start"
 done
 
 exit 0
