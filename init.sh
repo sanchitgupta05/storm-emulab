@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# This script setups storm's dependencies, needs to be run in all hosts.
 
 sudo apt-get update
 sudo apt-get install -y openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin chkconfig supervisor maven2
