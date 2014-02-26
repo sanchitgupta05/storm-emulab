@@ -3,9 +3,10 @@
 # Start storm processes.
 
 NUM_HOSTS=3
+ZOOKEEPER_DIR="/proj/uiucnet/exp/storm/deps/zookeeper-3.4.5/"
 
 echo "Starting zookeeper..."
-cd /proj/uiucnet/exp/storm/deps/zookeeper-3.4.5/
+cd $ZOOKEEPER_DIR
 sudo ./bin/zkServer.sh start
 
 for i in `seq 1 $NUM_HOSTS`;
