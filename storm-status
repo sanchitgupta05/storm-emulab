@@ -1,0 +1,14 @@
+#!/bin/bash
+#
+# Start storm processes.
+
+NUM_HOSTS=3
+
+for i in `seq 1 $NUM_HOSTS`;
+do
+    echo "Supervisor ${i} status..."
+    ssh hosts-$i "sudo supervisorctl status"
+    printf "\n"
+done
+
+exit 0
