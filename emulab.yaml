@@ -32,16 +32,17 @@
 #       - endpoint: "metrics-collector.mycompany.org"
 
 storm.zookeeper.servers:
-  - "hosts-1.storm.uiucnet.emulab.net"
+  - "hosts-1.storm.DCSQ.emulab.net"
 
 storm.local.dir: "/tmp/storm"
 storm.messaging.transport: "backtype.storm.messaging.netty.Context"
 storm.scheduler: "storm.NetworkScheduler"
-nimbus.host: "hosts-1.storm.uiucnet.emulab.net"
+nimbus.host: "hosts-1.storm.DCSQ.emulab.net"
 
 supervisor.slots.ports:
     - 6700
     - 6701
+    - 6702
 
 # Name will be configured when deployed to emulab
 supervisor.scheduler.meta:
