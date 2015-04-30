@@ -6,17 +6,20 @@ MASTER_NODE="hosts-1.storm.DCSQ.emulab.net"
 REPO_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 
 sudo apt-get update
-sudo apt-get install -y vim openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin supervisor maven2
+sudo apt-get install -y openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin supervisor maven2 unzip
 
-cd /proj/DCSQ/exp/storm/deps/zeromq-4.0.3/
-sudo make install
+cd /proj/DCSQ/exp/storm/deps
 
-cd /proj/DCSQ/exp/storm/deps/jzmq/
-sudo make install
+#Download Storm and configure it
+# Storm lives in the tmp folded
 
 sudo chown -R `whoami` /tmp/storm
+cd /tmp
+wget http://apache.arvixe.com/storm/apache-storm-0.9.4/apache-storm-0.9.4.tar.gz 
+tar -xzf apache-storm-0.9.4.tar.gz
+sudo cp -R ./apache-storm-0.9.4 ./storm
 mkdir /tmp/storm/logs/ -p
-mkdir /tmp/storm/conf/ -p
+
 cp $REPO_DIR/emulab.yaml /tmp/storm/conf/storm.yaml
 echo -e "    name: \"`hostname`\"" >> /tmp/storm/conf/storm.yaml
 
@@ -32,3 +35,10 @@ else
 fi
 
 sudo service supervisor restart
+
+
+
+
+
+
+
