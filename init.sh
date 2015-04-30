@@ -8,8 +8,6 @@ REPO_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 sudo apt-get update
 sudo apt-get install -y openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin supervisor maven2 unzip
 
-cd /proj/DCSQ/exp/storm/deps
-
 #Download Storm and configure it
 # Storm lives in the tmp folded
 
