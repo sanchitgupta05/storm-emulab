@@ -6,7 +6,7 @@ MASTER_NODE="hosts-1.storm.DCSQ.emulab.net"
 REPO_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 
 sudo apt-get update
-sudo apt-get install -y openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin chkconfig supervisor maven2
+sudo apt-get install -y vim openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin supervisor maven2
 
 cd /proj/DCSQ/exp/storm/deps/zeromq-4.0.3/
 sudo make install
