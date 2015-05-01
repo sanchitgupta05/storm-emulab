@@ -6,6 +6,8 @@
 #create a directory for deps
 mkdir /proj/DCSQ/exp/storm/deps/
 
+cd /proj/DCSQ/exp/storm/deps/
+
 #download zeromq and install it
 wget http://download.zeromq.org/zeromq-4.0.3.tar.gz
 tar -xfz zeromq-4.0.3.tar.gz
