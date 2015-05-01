@@ -5,7 +5,6 @@
 # download deps
 #create a directory for deps
 mkdir /proj/DCSQ/exp/storm/deps/
-
 cd /proj/DCSQ/exp/storm/deps/
 
 #download zeromq and install it
@@ -16,7 +15,10 @@ cd /proj/DCSQ/exp/storm/deps/zeromq-4.0.3/
 sudo make install
 
 #Download JZMQ and install it
-
 cd /proj/DCSQ/exp/storm/deps/jzmq/
 sudo make install
+
+
+#Downlad Zookeeper and install it
+
 

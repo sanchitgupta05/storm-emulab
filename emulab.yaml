@@ -34,7 +34,7 @@
 storm.zookeeper.servers:
   - "hosts-1"
 
-storm.local.dir: "/usr/local/storm"
+storm.local.dir: "/tmp/storm"
 #storm.messaging.transport: "backtype.storm.messaging.netty.Context"
 #storm.scheduler: "storm.NetworkScheduler"
 nimbus.host: "hosts-1"
