@@ -3,7 +3,7 @@
 # Start storm processes.
 
 NUM_HOSTS=4
-ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.5/"
+ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"
 
 echo "Starting zookeeper..."
 cd $ZOOKEEPER_DIR
