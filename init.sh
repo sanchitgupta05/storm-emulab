@@ -29,6 +29,7 @@ sudo chmod -R 0777 /var/log/storm
 
 #get the yaml file from $REPO_DIR
 sudo cp $REPO_DIR/emulab.yaml $STORM_DIR/conf/storm.yaml
+sudo cp $REPO_DIR/zoo.cfg $ZOOKEEPER_DIR/conf/zoo.cfg
 
 #Supervisor scheduler meta information: will be used later
 #echo -e "    name: \"`hostname`\"" >> /tmp/storm/conf/storm.yaml
