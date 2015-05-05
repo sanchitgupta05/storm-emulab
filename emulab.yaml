@@ -38,6 +38,7 @@ storm.local.dir: "/tmp/storm"
 #storm.messaging.transport: "backtype.storm.messaging.netty.Context"
 #storm.scheduler: "storm.NetworkScheduler"
 nimbus.host: "hosts-1"
+nimbus.port: 49627
 
 supervisor.slots.ports:
     - 6700

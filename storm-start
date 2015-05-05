@@ -4,15 +4,16 @@
 
 NUM_HOSTS=4
 ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"
+SCRIPT_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 
 echo "Starting zookeeper..."
-cd $ZOOKEEPER_DIR
-sudo ./bin/zkServer.sh start
+#cd $ZOOKEEPER_DIR
+#sudo ./bin/zkServer.sh start
 
 for i in `seq 1 $NUM_HOSTS`;
 do
     echo "Starting supervisor ${i}..."
-    ssh hosts-$i "sudo service supervisor start"
+    ssh hosts-$i "cd $SCRIPT_DIR && ./init.sh " &
 done
 
 exit 0

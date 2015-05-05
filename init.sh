@@ -18,23 +18,23 @@ sudo tar -xzf /tmp/apache-storm-0.9.4.tar.gz
 sudo chown -R `whoami` apache-storm-0.9.4
 sudo ln -s apache-storm-0.9.4 storm
 
-sudo chown -R `whoami` /tmp/storm
+#permission setting
+sudo chmod -R 0777 /tmp/storm
 sudo mkdir $STORM_DIR/logs/ -p
 
 #supervisord logs
 sudo mkdir -p /var/log/storm
 sudo chown -R `whoami` /var/log/storm
-
+sudo chmod -R 0777 /var/log/storm
 
 #get the yaml file from $REPO_DIR
-sudo cp $REPO_DIR/emulab.yaml REPO_DIR/../storm/conf/storm.yaml
+sudo cp $REPO_DIR/emulab.yaml $STORM_DIR/conf/storm.yaml
 
 #Supervisor scheduler meta information: will be used later
 #echo -e "    name: \"`hostname`\"" >> /tmp/storm/conf/storm.yaml
 
 # Start supervisord
 sudo pkill supervisord
-echo `hostname`
 if [ `hostname` = $MASTER_NODE ];
 then
     sudo cp $REPO_DIR/supervisord_master.conf /etc/supervisor/supervisord.conf
@@ -45,3 +45,4 @@ fi
 
 #start all the dependants of this supervisord
 sudo service supervisor restart
+
