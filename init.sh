@@ -2,10 +2,10 @@
 #
 # This script setups storm's dependencies, needs to be run in all hosts.
 
-MASTER_NODE="hosts-1.storm2.dcsq.emulab.net"
-REPO_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
+MASTER_NODE="hosts-1.storm3.dcsq.emulab.net"
+REPO_DIR="/proj/DCSQ/exp/storm3/storm-emulab/"
 STORM_DIR="/tmp/storm"
-ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"
+ZOOKEEPER_DIR="/proj/DCSQ/exp/storm3/deps/zookeeper-3.4.6/"
 
 sudo apt-get update
 sudo apt-get install -y openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin supervisor maven2 unzip
@@ -13,7 +13,7 @@ sudo apt-get install -y openjdk-7-jre openjdk-7-jdk build-essential pkg-config l
 
 ### Download Storm and create $STORM_HOME = /tmp/storm
 cd /tmp
-wget http://apache.arvixe.com/storm/apache-storm-0.9.4/apache-storm-0.9.4.tar.gz 
+sudo wget http://apache.arvixe.com/storm/apache-storm-0.9.4/apache-storm-0.9.4.tar.gz 
 sudo tar -xzf /tmp/apache-storm-0.9.4.tar.gz
 sudo chown -R `whoami` apache-storm-0.9.4
 sudo ln -s apache-storm-0.9.4 storm
@@ -29,7 +29,6 @@ sudo chmod -R 0777 /var/log/storm
 
 #get the yaml file from $REPO_DIR
 sudo cp $REPO_DIR/emulab.yaml $STORM_DIR/conf/storm.yaml
-sudo cp $REPO_DIR/zoo.cfg $ZOOKEEPER_DIR/conf/zoo.cfg
 
 #Supervisor scheduler meta information: will be used later
 #echo -e "    name: \"`hostname`\"" >> /tmp/storm/conf/storm.yaml
@@ -45,5 +44,5 @@ else
 fi
 
 #start all the dependants of this supervisord
-sudo service restart all
+sudo service supervisor start
 

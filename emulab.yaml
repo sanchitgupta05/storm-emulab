@@ -47,5 +47,6 @@ supervisor.slots.ports:
     - 6702
     - 6703
     - 6704
+    - 6705
 # Name will be configured when deployed to emulab
 #supervisor.scheduler.meta:
