@@ -2,7 +2,7 @@
 #
 # This script setups storm's dependencies, needs to be run in all hosts.
 
-MASTER_NODE="hosts-1.storm.dcsq.emulab.net"
+MASTER_NODE="hosts-1.storm2.dcsq.emulab.net"
 REPO_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 STORM_DIR="/tmp/storm"
 ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"

@@ -5,14 +5,18 @@
 # download deps
 #create a directory for deps
 
+sudo apt-get update
+sudo apt-get install -y vim openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin supervisor maven2 unzip
+
 sudo mkdir /proj/DCSQ/exp/storm/deps/
 cd /proj/DCSQ/exp/storm/deps/
 sudo chmod -R 0777 ../deps/
 
 #download zeromq and install it
 sudo wget http://download.zeromq.org/zeromq-4.0.3.tar.gz
-sudo tar -xfz zeromq-4.0.3.tar.gz
+sudo tar -xzf zeromq-4.0.3.tar.gz
 sudo cd /proj/DCSQ/exp/storm/deps/zeromq-4.0.3/
+sudo ./autogen.sh
 sudo ./configure && sudo make && sudo make install
 
 
@@ -20,8 +24,8 @@ sudo ./configure && sudo make && sudo make install
 cd /proj/DCSQ/exp/storm/deps/
 sudo mkdir jzmq
 cd jzmq
-git init
-git pull https://github.com/zeromq/jzmq master
+sudo git init
+sudo git pull https://github.com/zeromq/jzmq master
 sudo ./autogen.sh
 sudo ./configure
 sudo make
@@ -30,7 +34,7 @@ sudo make install
 #Downlad Zookeeper and install it
 cd /proj/DCSQ/exp/storm/deps
 sudo wget http://supergsego.com/apache/zookeeper/zookeeper-3.4.6/zookeeper-3.4.6.tar.gz
-sudo tar -xfz zookeeper-3.4.6.tar.gz
+sudo tar -xzf zookeeper-3.4.6.tar.gz
 sudo cd zookeeper-3.4.6/
 #install the config in /zookeeper-3.4.6/conf/zoo.cfg ...
 
