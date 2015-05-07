@@ -2,7 +2,7 @@
 #
 # Start storm processes.
 
-NUM_HOSTS=6
+NUM_HOSTS=20
 ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"
 SCRIPT_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 
@@ -12,8 +12,9 @@ echo "Starting zookeeper..."
 
 for i in `seq 1 $NUM_HOSTS`;
 do
-    echo "Starting supervisor ${i}..."
     ssh hosts-$i "cd $SCRIPT_DIR && ./init.sh " &
+    echo "Starting init.sh ${i}..."
+
 done
 
 exit 0

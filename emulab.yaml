@@ -37,6 +37,7 @@ storm.zookeeper.servers:
 storm.local.dir: "/tmp/storm"
 #storm.messaging.transport: "backtype.storm.messaging.netty.Context"
 #storm.scheduler: "storm.NetworkScheduler"
+#"hosts-1.storm2.DCSQ.emulab.net"
 nimbus.host: "hosts-1"
 nimbus.port: 49627
 
@@ -44,6 +45,7 @@ supervisor.slots.ports:
     - 6700
     - 6701
     - 6702
-
+    - 6703
+    - 6704
 # Name will be configured when deployed to emulab
 #supervisor.scheduler.meta:

@@ -1,8 +1,8 @@
 set ns [new Simulator]
 source tb_compat.tcl
-set maxnodes 6
+set maxnodes 16
 set lanstr ""
-set nodetype "pc3000"
+set nodetype "d710"
 
 for {set i 1} {$i <= $maxnodes} {incr i} {
 	set hosts($i) [$ns node]

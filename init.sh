@@ -45,5 +45,5 @@ else
 fi
 
 #start all the dependants of this supervisord
-sudo service supervisor restart
+sudo service restart all
 
