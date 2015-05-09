@@ -2,10 +2,10 @@
 #
 # This script setups storm's dependencies, needs to be run in all hosts.
 
-MASTER_NODE="hosts-1.storm3.dcsq.emulab.net"
-REPO_DIR="/proj/DCSQ/exp/storm3/storm-emulab/"
+MASTER_NODE="hosts-1.storm.dcsq.emulab.net"
+REPO_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 STORM_DIR="/tmp/storm"
-ZOOKEEPER_DIR="/proj/DCSQ/exp/storm3/deps/zookeeper-3.4.6/"
+ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"
 
 sudo apt-get update
 sudo apt-get install -y openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin supervisor maven2 unzip
@@ -25,8 +25,9 @@ sudo chown -R `whoami` apache-storm-0.10.0-SNAPSHOT
 sudo ln -s apache-storm-0.10.0-SNAPSHOT storm
 
 #permission setting
-sudo chmod -R 0777 /tmp/storm
 sudo mkdir $STORM_DIR/logs/ -p
+sudo chmod -R 0777 /tmp/storm
+cd /logs && touch nimbus.log supervisor.log 
 
 #supervisord logs
 sudo mkdir -p /var/log/storm

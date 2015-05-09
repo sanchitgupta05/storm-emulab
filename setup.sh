@@ -5,10 +5,10 @@
 # download deps
 #create a directory for deps
 
-DEPS_DIR="/proj/DCSQ/exp/storm3/deps/"
-REPO_DIR="/proj/DCSQ/exp/storm3/storm-emulab/"
+DEPS_DIR="/proj/DCSQ/exp/storm/deps/"
+REPO_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 STORM_DIR="/tmp/storm"
-ZOOKEEPER_DIR="/proj/DCSQ/exp/storm3/deps/zookeeper-3.4.6/"
+ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"
 
 sudo apt-get update
 sudo apt-get install -y vim openjdk-7-jre openjdk-7-jdk build-essential pkg-config libtool zookeeper zookeeper-bin supervisor maven2 unzip
