@@ -7,8 +7,8 @@ ZOOKEEPER_DIR="/proj/DCSQ/exp/storm3/deps/zookeeper-3.4.6/"
 SCRIPT_DIR="/proj/DCSQ/exp/storm3/storm-emulab/"
 
 echo "Starting zookeeper..."
-#cd $ZOOKEEPER_DIR
-#sudo ./bin/zkServer.sh start
+cd $ZOOKEEPER_DIR
+sudo ./bin/zkServer.sh start
 
 for i in `seq 1 $NUM_HOSTS`;
 do

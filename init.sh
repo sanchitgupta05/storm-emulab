@@ -13,10 +13,16 @@ sudo apt-get install -y openjdk-7-jre openjdk-7-jdk build-essential pkg-config l
 
 ### Download Storm and create $STORM_HOME = /tmp/storm
 cd /tmp
-sudo wget http://apache.arvixe.com/storm/apache-storm-0.9.4/apache-storm-0.9.4.tar.gz 
-sudo tar -xzf /tmp/apache-storm-0.9.4.tar.gz
-sudo chown -R `whoami` apache-storm-0.9.4
-sudo ln -s apache-storm-0.9.4 storm
+
+#sudo wget http://apache.arvixe.com/storm/apache-storm-0.9.4/apache-storm-0.9.4.tar.gz 
+#sudo tar -xzf /tmp/apache-storm-0.9.4.tar.gz
+#sudo chown -R `whoami` apache-storm-0.9.4
+#sudo ln -s apache-storm-0.9.4 storm
+
+sudo wget https://dl.dropboxusercontent.com/u/17354842/apache-storm-0.10.0-SNAPSHOT.tar.gz
+sudo tar -xzf /tmp/apache-storm-0.10.0-SNAPSHOT.tar.gz
+sudo chown -R `whoami` apache-storm-0.10.0-SNAPSHOT
+sudo ln -s apache-storm-0.10.0-SNAPSHOT storm
 
 #permission setting
 sudo chmod -R 0777 /tmp/storm
