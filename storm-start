@@ -2,7 +2,7 @@
 #
 # Start storm processes.
 
-NUM_HOSTS=20
+NUM_HOSTS=6
 ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"
 SCRIPT_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 
