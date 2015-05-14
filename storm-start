@@ -3,18 +3,21 @@
 # Start storm processes.
 
 NUM_HOSTS=20
-ZOOKEEPER_DIR="/proj/DCSQ/exp/storm3/deps/zookeeper-3.4.6/"
-SCRIPT_DIR="/proj/DCSQ/exp/storm3/storm-emulab/"
+ZOOKEEPER_DIR="/proj/DCSQ/exp/storm/deps/zookeeper-3.4.6/"
+SCRIPT_DIR="/proj/DCSQ/exp/storm/storm-emulab/"
 
-echo "Starting zookeeper..."
-cd $ZOOKEEPER_DIR
-sudo ./bin/zkServer.sh start
+#echo "Starting zookeeper..."
+#cd $ZOOKEEPER_DIR
+#sudo ./bin/zkServer.sh start
 
-for i in `seq 1 $NUM_HOSTS`;
+for i in `seq 2 $NUM_HOSTS`;
 do
-    ssh hosts-$i "cd $SCRIPT_DIR && ./init.sh " &
+    ssh hosts-$i "cd $SCRIPT_DIR && ./init.sh " & 
     echo "Starting init.sh ${i}..."
 
 done
+
+#now start this nodes init.sh
+cd $SCRIPT_DIR && ./init.sh
 
 exit 0

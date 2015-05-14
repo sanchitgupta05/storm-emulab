@@ -48,6 +48,7 @@ supervisor.slots.ports:
     - 6703
     - 6704
     - 6705
->>>>>>> edadd59941cd409ab9420ceed5a65e313d3ffe6e
+
+storm.scheduler: "storm.CrossLayerScheduler"      
 # Name will be configured when deployed to emulab
 #supervisor.scheduler.meta:

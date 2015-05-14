@@ -2,7 +2,7 @@
 #
 # Start storm processes.
 
-NUM_HOSTS=4
+NUM_HOSTS=20
 
 for i in `seq 1 $NUM_HOSTS`;
 do

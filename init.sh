@@ -19,15 +19,16 @@ cd /tmp
 #sudo chown -R `whoami` apache-storm-0.9.4
 #sudo ln -s apache-storm-0.9.4 storm
 
-sudo wget https://dl.dropboxusercontent.com/u/17354842/apache-storm-0.10.0-SNAPSHOT.tar.gz
+sudo wget https://www.dropbox.com/s/sok5rtk0wtefg3k/apache-storm-0.10.0-SNAPSHOT.tar.gz
 sudo tar -xzf /tmp/apache-storm-0.10.0-SNAPSHOT.tar.gz
 sudo chown -R `whoami` apache-storm-0.10.0-SNAPSHOT
-sudo ln -s apache-storm-0.10.0-SNAPSHOT storm
+#remove if any directory existed
+sudo rm -rf storm && sudo ln -s apache-storm-0.10.0-SNAPSHOT storm
 
 #permission setting
 sudo mkdir $STORM_DIR/logs/ -p
 sudo chmod -R 0777 /tmp/storm
-cd /logs && touch nimbus.log supervisor.log 
+cd $STORM_DIR/logs && touch nimbus.log supervisor.log 
 
 #supervisord logs
 sudo mkdir -p /var/log/storm
